@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Kualitas Air</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #konten {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#konten").load("home.php");
+            var refreshId = setInterval(function () {
+                $("#konten").load('home.php');
+            }, 5000); // Mengubah interval reload ke 5000 ms (5 detik)
+            $.ajaxSetup({
+                cache: false
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <center>
+        <div id="konten"></div>
+    </center>
+</body>
+
+</html>
